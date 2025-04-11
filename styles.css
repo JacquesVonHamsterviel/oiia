@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #00b140;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#controls {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.speed-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #00b140;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+}
+.speed-button:hover {
+    transform: scale(1.1);
+}
+
+.speed-button::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.speed-button:last-child::after {
+    display: none;
+}
+
+#controls .speed-button:not(:last-child)::after {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    right: -15px;
+}
